@@ -1,7 +1,5 @@
-# This is a test
+# Welcome to johanneschan.com!
 
-## hello!
+## calculators:
 
-- create index page
-- set domain name
-- ...
+[root machine](rootmachine/rootmachine.html)
