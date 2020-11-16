@@ -5,6 +5,7 @@
   <style>
     body {
       font-family: sans-serif;
+      background-color: black;
     }
 
     #heading {
@@ -14,6 +15,12 @@
       text-align: center;
       padding: 80px;
       background-image: linear-gradient(green, yellow);
+    }
+
+    .sectionheading {
+      padding: 5px;
+      padding-left: 20px;
+      background-color: #86e68d;
     }
 
     a {
@@ -43,11 +50,25 @@
 <body>
   <div id="heading">Welcome to johanneschan.com!</div>
   <div style="border: 5px #8a8a8a solid">
+    <div class="sectionheading">
+      <h2>Tools</h2>
+    </div>
+
     <a href="wordpicker/wordpicker.html">Word Picker</a>
     <a href="rootmachine/rootmachine.html">Root Machine</a>
-    <a href="randomcode/breathing.html">breathing animation</a>
     <a href="NatureCam/home.html">NatureCam</a>
+
+    <div class="sectionheading">
+      <h2>Animations</h2>
+    </div>
+
+    <a href="randomcode/breathing.html">Breathing Animation</a>
     <a href="randomcode/shapes.html">Changing shape</a>
+  </div><br>
+
+  <div class="sectionheading" style="padding: 20px;">
+    <h2>Image Map</h2>
+    <div>In this image, there are hidden links. Can you find them? The links will take you to one of the things on johanneschan.com.</div>
   </div>
 
   <img src="Johanneschan.com-homepage.png" usemap="#image-map">
