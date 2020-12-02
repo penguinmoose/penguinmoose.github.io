@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="icon-1.ico" type="image/ico" sizes="16x16">
+  <link id="favicon" rel="icon" href="icon-1.ico" type="image/ico" sizes="16x16">
 
   <style>
     body {
@@ -123,6 +123,15 @@
     <area target="_blank" alt="Breathing Animation" title="Breathing Animation" href="randomcode/breathing.html" coords="672,319,668,291,706,235,763,231,775,274,776,325" shape="poly">
     <area target="_blank" alt="NatureCam" title="NatureCam" href="NatureCam/home.html" coords="232,258,316,390" shape="rect">
   </map>
+
+  <script>
+    window.onload = function() {
+      var randnum = Math.floor(Math.random() * 2) + 1;
+      var favicon = document.getElementById('favicon');
+      console.log(randnum.toString());
+      favicon.href = "icon-" + randnum.toString() + ".ico";
+    };
+  </script>
 </body>
 
 </html>
