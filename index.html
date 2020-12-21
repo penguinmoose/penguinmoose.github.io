@@ -72,11 +72,31 @@
     a:hover {
       background-color: #52adff;
     }
+
+    .happyholidays-popup {
+      display: none;
+      padding: 20px;
+      font-size: 20pt;
+      font-family: cursive;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -100px;
+      border-radius: 20px;
+      background-color: #7492d6;
+    }
   </style>
 </head>
 
 <body>
-  <div id="heading">Welcome to johanneschan.com!</div>
+  <div id="heading" onclick="document.getElementById('happyholidays').style.display = 'block';">Welcome to johanneschan.com!</div>
+
+  <div class="happyholidays-popup" id="happyholidays" onclick="document.getElementById('happyholidays').style.display = 'none';">
+    <button>x</button>
+    <img src="happy-holidays.png" style="height: 165px; width: 325px;"></img>
+  </div>
+
   <div style="border: 5px #8a8a8a solid">
     <div class="sectionheading">
       <h2>Tools</h2>
@@ -114,21 +134,8 @@
     <area target="_blank" alt="Breathing Animation" title="Breathing Animation" href="randomcode/breathing.html" coords="973,572,1064,567,1049,641,1105,709,988,718,997,652" shape="poly">
   </map>
 
-  <div class="sectionheading">
-    <div>Below is another image map. However, the links in the image don't work for now.</div>
-  </div>
-
-  <img src="Johanneschan.com-homepage-2.jpg" usemap="#image-map">
-
-  <map name="image-map">
-    <area target="_blank" alt="Changing Shape" title="Changing Shape" href="randomcode/shapes.html" coords="367,331,496,428" shape="rect">
-    <area target="_blank" alt="Root Machine" title="Root Machine" href="rootmachine/rootmachine.html" coords="553,341,617,327,633,399,575,409" shape="poly">
-    <area target="_blank" alt="Word Picker" title="Word Picker" href="wordpicker/wordpicker.html" coords="623,327,641,397,712,389,706,325" shape="poly">
-    <area target="_blank" alt="Breathing Animation" title="Breathing Animation" href="randomcode/breathing.html" coords="672,319,668,291,706,235,763,231,775,274,776,325" shape="poly">
-    <area target="_blank" alt="NatureCam" title="NatureCam" href="NatureCam/home.html" coords="232,258,316,390" shape="rect">
-  </map>
-
   <script>
+
     window.onload = function() {
       var randnum = Math.floor(Math.random() * 4) + 1;
       var favicon = document.getElementById('favicon');
