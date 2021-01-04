@@ -53,9 +53,7 @@
     #heading {
       width: 100%;
       height: auto;
-      font-size: 80pt;
       text-align: center;
-      padding: 80px;
       background-image: linear-gradient(green, yellow);
       font-family: 'Sriracha', cursive;
     }
@@ -99,11 +97,34 @@
       border-radius: 20px;
       background-color: black;
     }
+
+    .audio-control {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      margin-right: 100%;
+      border-radius: 12px;
+      border: 5px solid #787878;
+      background-color: white;
+    }
+
+    .heading-text {
+      font-size: 80pt;
+      padding: 80px;
+    }
   </style>
 </head>
 
 <body>
-  <div id="heading">Welcome to johanneschan.com!</div> <!-- add onclick="document.getElementById('happyholidays').style.display = 'block';" when holiday comes -->
+  <div id="heading">
+    <img src="unmute.png" class="audio-control" id="audio-on" onclick="turnAudio('off');">
+    <img src="mute.png" class="audio-control" id="audio-off" onclick="turnAudio('on');">
+    <audio id="audio">
+      <source src="audio.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <span class="heading-text">Welcome to johanneschan.com!</span>
+  </div> <!-- add onclick="document.getElementById('happyholidays').style.display = 'block';" when holiday comes -->
 
   <div class="happyholidays-popup" id="happyholidays" onclick="document.getElementById('happyholidays').style.display = 'none';">
     <button style="background-color: white; border: none;">&times</button><br>
@@ -149,11 +170,26 @@
 
   <script>
     window.onload = function() {
+      turnAudio("off");
       var randnum = Math.floor(Math.random() * 4) + 1;
       var favicon = document.getElementById('favicon');
       console.log(randnum.toString());
       favicon.href = "icon-" + randnum.toString() + ".ico";
     };
+
+    function turnAudio(onoff) {
+      var audio = document.getElementById("audio");
+
+      if (onoff == 'on') {
+        audio.play();
+        document.getElementById("audio-on").style.display = "block";
+        document.getElementById("audio-off").style.display = "none";
+      } else {
+        audio.pause();
+        document.getElementById("audio-on").style.display = "none";
+        document.getElementById("audio-off").style.display = "block";
+      }
+    }
   </script>
 </body>
 
