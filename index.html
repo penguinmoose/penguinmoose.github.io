@@ -28,7 +28,8 @@
   <style>
     body {
       font-family: sans-serif;
-      background-color: black;
+      background-color: #132e46;
+      color: #132e46;
     }
 
     ::-webkit-scrollbar {
@@ -55,14 +56,14 @@
       width: 100%;
       height: auto;
       text-align: center;
-      background-image: linear-gradient(green, yellow);
+      background-image: linear-gradient(#479e4c, #f4f766);
       font-family: 'Sriracha', cursive;
     }
 
     .sectionheading {
       padding: 5px;
       padding-left: 20px;
-      background-color: #86e68d;
+      background-color: #479e4c;
     }
 
     a {
@@ -70,9 +71,9 @@
       width: 100%;
       padding: 20px;
       border-left: 10px solid #6c95ff;
-      background-color: #9acfff;
+      background-color: #9acffe;
       text-decoration: none;
-      color: black;
+      color: #506bac;
     }
 
     a:link {
@@ -132,7 +133,7 @@
     <img src="happy-holidays.png" style="height: 165px; width: 325px;"></img>
   </div>
 
-  <div style="border: 5px #8a8a8a solid">
+  <div style="border: 5px #d4ecd6 solid;">
     <div class="sectionheading">
       <h2>Tools</h2>
     </div>
@@ -162,20 +163,21 @@
   </div>
   <br>
 
-  <div class="sectionheading" style="padding: 20px;">
-    <h2>Image Map</h2>
-    <div>In this image, there are hidden links. Can you find them? The links will take you to one of the things on johanneschan.com.</div>
+  <div style="border:  5px #d4ecd6 solid;">
+    <div class="sectionheading" style="padding: 20px;">
+      <h2>Image Map</h2>
+      <div>In this image, there are hidden links. Can you find them? The links will take you to one of the things on johanneschan.com.</div>
+    </div>
+
+    <img src="Johanneschan.com-homepage.png" usemap="#image-map">
+    <map name="image-map">
+      <area target="_blank" alt="Word Picker" title="Word Picker" href="wordpicker/wordpicker.html" coords="706,760,952,938" shape="rect">
+      <area target="_blank" alt="NatureCam" title="NatureCam" href="NatureCam/home.html" coords="990,508,1293,521,1288,319,1161,154,1001,312" shape="poly">
+      <area target="_blank" alt="Root Machine" title="Root Machine" href="rootmachine/rootmachine.html" coords="457,752,372,892,589,913,677,768" shape="poly">
+      <area target="_blank" alt="Changing Shape" title="Changing Shape" href="randomcode/shapes.html" coords="1120,938,1072,999,1069,1059,1151,1064,1174,1045,1184,948" shape="poly">
+      <area target="_blank" alt="Breathing Animation" title="Breathing Animation" href="randomcode/breathing.html" coords="973,572,1064,567,1049,641,1105,709,988,718,997,652" shape="poly">
+    </map>
   </div>
-
-  <img src="Johanneschan.com-homepage.png" usemap="#image-map">
-
-  <map name="image-map">
-    <area target="_blank" alt="Word Picker" title="Word Picker" href="wordpicker/wordpicker.html" coords="706,760,952,938" shape="rect">
-    <area target="_blank" alt="NatureCam" title="NatureCam" href="NatureCam/home.html" coords="990,508,1293,521,1288,319,1161,154,1001,312" shape="poly">
-    <area target="_blank" alt="Root Machine" title="Root Machine" href="rootmachine/rootmachine.html" coords="457,752,372,892,589,913,677,768" shape="poly">
-    <area target="_blank" alt="Changing Shape" title="Changing Shape" href="randomcode/shapes.html" coords="1120,938,1072,999,1069,1059,1151,1064,1174,1045,1184,948" shape="poly">
-    <area target="_blank" alt="Breathing Animation" title="Breathing Animation" href="randomcode/breathing.html" coords="973,572,1064,567,1049,641,1105,709,988,718,997,652" shape="poly">
-  </map>
 
   <!-- Global site tag (gtag.js) for Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
