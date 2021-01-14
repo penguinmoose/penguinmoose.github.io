@@ -25,6 +25,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
 
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <style>
     body {
       font-family: sans-serif;
@@ -60,15 +66,33 @@
       font-family: 'Sriracha', cursive;
     }
 
+    .heading-text {
+      font-size: 80pt;
+      padding: 80px;
+    }
+
     .sectionheading {
       padding: 5px;
       padding-left: 20px;
       background-color: #479e4c;
+      color: #1c3d1e;
+    }
+
+    .tableheading {
+      width: calc(100% - 50px);
+    }
+
+    .table-container {
+      background-color: #d4ecd6;
+      padding: 20px;
+      margin-left: 75px;
+      margin-right: 75px;
+      border-radius: 10px;
     }
 
     a {
       display: inline-block;
-      width: 100%;
+      width: calc(100% - 50px);
       padding: 20px;
       border-left: 10px solid #6c95ff;
       background-color: #9acffe;
@@ -109,11 +133,6 @@
       border: 5px solid #787878;
       background-color: white;
     }
-
-    .heading-text {
-      font-size: 80pt;
-      padding: 80px;
-    }
   </style>
 </head>
 
@@ -133,37 +152,44 @@
     <img src="happy-holidays.png" style="height: 165px; width: 325px;"></img>
   </div>
 
-  <div style="border: 5px #d4ecd6 solid;">
-    <div class="sectionheading">
-      <h2>Tools</h2>
+  <div class="table-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="sectionheading tableheading">
+            <h2>Tools</h2>
+          </div>
+          <a href="wordpicker/wordpicker.html">Word Picker</a>
+          <a href="rootmachine/rootmachine.html">Root Machine</a>
+          <a href="NatureCam/home.html">NatureCam</a>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="sectionheading tableheading">
+            <h2>Animations</h2>
+          </div>
+          <a href="randomcode/breathing.html">Breathing Animation</a>
+          <a href="randomcode/shapes.html">Changing shape</a>
+          <a href="https://www.sites.google.com/view/jchan-images">Images<br>
+            <small>Not an animation</small>
+          </a>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="sectionheading tableheading">
+            <h2>Happy Crew</h2>
+          </div>
+          <a href="https://docs.google.com/presentation/d/13SIZNlgdcG56uq0Da8i1SuKjOQFFJGyIzZdRuyfTmMI/edit?usp=sharing">Happy Crew slide</a>
+          <a href="https://docs.google.com/presentation/d/12qONZNfuIR88etm7Th05jjdImfDVnqwu495gnBCxTOY/edit?usp=sharing">Science Slide book</a>
+          <a href="https://docs.google.com/presentation/d/19VFccdYIMypvq-O2CVARsfuhgM46dmDSMAE4vLkOoS4/edit?usp=sharing">Shape Pictures</a>
+        </div>
+      </div>
     </div>
-
-    <a href="wordpicker/wordpicker.html">Word Picker</a>
-    <a href="rootmachine/rootmachine.html">Root Machine</a>
-    <a href="NatureCam/home.html">NatureCam</a>
-
-    <div class="sectionheading">
-      <h2>Animations</h2>
-    </div>
-
-    <a href="randomcode/breathing.html">Breathing Animation</a>
-    <a href="randomcode/shapes.html">Changing shape</a>
-
-    <div class="sectionheading">
-      <h2>Happy Crew</h2>
-    </div>
-
-    <a href="https://docs.google.com/presentation/d/13SIZNlgdcG56uq0Da8i1SuKjOQFFJGyIzZdRuyfTmMI/edit?usp=sharing">Happy Crew slide</a>
-    <a href="https://docs.google.com/presentation/d/12qONZNfuIR88etm7Th05jjdImfDVnqwu495gnBCxTOY/edit?usp=sharing">Science Slide book</a>
-    <a href="https://docs.google.com/presentation/d/19VFccdYIMypvq-O2CVARsfuhgM46dmDSMAE4vLkOoS4/edit?usp=sharing">Shape Pictures</a>
-  </div>
-
-  <div class="sectionheading" style="padding-top: 30px;">
-    <a href="https://www.sites.google.com/view/jchan-images">Images</a>
   </div>
   <br>
 
-  <div style="border:  5px #d4ecd6 solid;">
+
+  <div style="border: 5px #d4ecd6 solid;">
     <div class="sectionheading" style="padding: 20px;">
       <h2>Image Map</h2>
       <div>In this image, there are hidden links. Can you find them? The links will take you to one of the things on johanneschan.com.</div>
