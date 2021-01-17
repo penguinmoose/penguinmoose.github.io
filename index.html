@@ -59,7 +59,7 @@
     }
 
     #heading {
-      width: 100%;
+      width: calc(100% + 100px);
       height: auto;
       text-align: center;
       background-image: linear-gradient(#479e4c, #f4f766);
@@ -68,6 +68,11 @@
 
     .heading-text {
       font-size: 80pt;
+      padding: 80px;
+    }
+
+    .mobile-heading-text {
+      font-size: 20pt;
       padding: 80px;
     }
 
@@ -137,78 +142,139 @@
 </head>
 
 <body>
-  <div id="heading">
-    <img src="unmute.png" class="audio-control" id="audio-on" onclick="turnAudio('off');">
-    <img src="mute.png" class="audio-control" id="audio-off" onclick="turnAudio('on');" style="display: none;">
-    <audio id="audio">
-      <source src="cannon-in-d.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-    <h1 class="heading-text">Welcome to johanneschan.com!</h1>
-  </div> <!-- add onclick="document.getElementById('happyholidays').style.display = 'block';" when holiday comes -->
+  <div id="desktop">
+    <div id="heading">
+      <img src="unmute.png" class="audio-control" id="audio-on" onclick="turnAudio('off');">
+      <img src="mute.png" class="audio-control" id="audio-off" onclick="turnAudio('on');" style="display: none;">
+      <audio id="audio">
+        <source src="cannon-in-d.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <h1 class="heading-text">Welcome to johanneschan.com!</h1>
+    </div> <!-- add onclick="document.getElementById('happyholidays').style.display = 'block';" when holiday comes -->
 
-  <div class="happyholidays-popup" id="happyholidays" onclick="document.getElementById('happyholidays').style.display = 'none';">
-    <button style="background-color: white; border: none;">&times</button><br>
-    <img src="happy-holidays.png" style="height: 165px; width: 325px;"></img>
-  </div>
+    <div class="happyholidays-popup" id="happyholidays" onclick="document.getElementById('happyholidays').style.display = 'none';">
+      <button style="background-color: white; border: none;">&times</button><br>
+      <img src="happy-holidays.png" style="height: 165px; width: 325px;"></img>
+    </div>
 
-  <div class="table-container">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="sectionheading tableheading">
-            <h2>Tools</h2>
+    <div class="table-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="sectionheading tableheading">
+              <h2>Tools</h2>
+            </div>
+            <a href="wordpicker/wordpicker.html">Word Picker</a>
+            <a href="rootmachine/rootmachine.html">Root Machine</a>
+            <a href="NatureCam/home.html">NatureCam</a>
           </div>
-          <a href="wordpicker/wordpicker.html">Word Picker</a>
-          <a href="rootmachine/rootmachine.html">Root Machine</a>
-          <a href="NatureCam/home.html">NatureCam</a>
-        </div>
 
-        <div class="col-sm-4">
-          <div class="sectionheading tableheading">
-            <h2>Animations</h2>
+          <div class="col-sm-4">
+            <div class="sectionheading tableheading">
+              <h2>Animations</h2>
+            </div>
+            <a href="randomcode/breathing.html">Breathing Animation</a>
+            <a href="randomcode/shapes.html">Changing shape</a>
+            <a href="https://www.sites.google.com/view/jchan-images">Images<br>
+              <small>Not an animation</small>
+            </a>
           </div>
-          <a href="randomcode/breathing.html">Breathing Animation</a>
-          <a href="randomcode/shapes.html">Changing shape</a>
-          <a href="https://www.sites.google.com/view/jchan-images">Images<br>
-            <small>Not an animation</small>
-          </a>
-        </div>
 
-        <div class="col-sm-4">
-          <div class="sectionheading tableheading">
-            <h2>Happy Crew</h2>
+          <div class="col-sm-4">
+            <div class="sectionheading tableheading">
+              <h2>Happy Crew</h2>
+            </div>
+            <a href="https://docs.google.com/presentation/d/13SIZNlgdcG56uq0Da8i1SuKjOQFFJGyIzZdRuyfTmMI/edit?usp=sharing">Happy Crew slide</a>
+            <a href="https://docs.google.com/presentation/d/12qONZNfuIR88etm7Th05jjdImfDVnqwu495gnBCxTOY/edit?usp=sharing">Science Slide book</a>
+            <a href="https://docs.google.com/presentation/d/19VFccdYIMypvq-O2CVARsfuhgM46dmDSMAE4vLkOoS4/edit?usp=sharing">Shape Pictures</a>
           </div>
-          <a href="https://docs.google.com/presentation/d/13SIZNlgdcG56uq0Da8i1SuKjOQFFJGyIzZdRuyfTmMI/edit?usp=sharing">Happy Crew slide</a>
-          <a href="https://docs.google.com/presentation/d/12qONZNfuIR88etm7Th05jjdImfDVnqwu495gnBCxTOY/edit?usp=sharing">Science Slide book</a>
-          <a href="https://docs.google.com/presentation/d/19VFccdYIMypvq-O2CVARsfuhgM46dmDSMAE4vLkOoS4/edit?usp=sharing">Shape Pictures</a>
         </div>
       </div>
     </div>
-  </div>
-  <br>
+    <br>
 
 
-  <div style="border: 5px #d4ecd6 solid;">
-    <div class="sectionheading" style="padding: 20px;">
-      <h2>Image Map</h2>
-      <div>In this image, there are hidden links. Can you find them? The links will take you to one of the things on johanneschan.com.</div>
+    <div style="border: 5px #d4ecd6 solid;">
+      <div class="sectionheading" style="padding: 20px;">
+        <h2>Image Map</h2>
+        <div>In this image, there are hidden links. Can you find them? The links will take you to one of the things on johanneschan.com.</div>
+      </div>
+
+      <img src="Johanneschan.com-homepage.png" usemap="#image-map">
+      <map name="image-map">
+        <area target="_blank" alt="Word Picker" title="Word Picker" href="wordpicker/wordpicker.html" coords="706,760,952,938" shape="rect">
+        <area target="_blank" alt="NatureCam" title="NatureCam" href="NatureCam/home.html" coords="990,508,1293,521,1288,319,1161,154,1001,312" shape="poly">
+        <area target="_blank" alt="Root Machine" title="Root Machine" href="rootmachine/rootmachine.html" coords="457,752,372,892,589,913,677,768" shape="poly">
+        <area target="_blank" alt="Changing Shape" title="Changing Shape" href="randomcode/shapes.html" coords="1120,938,1072,999,1069,1059,1151,1064,1174,1045,1184,948" shape="poly">
+        <area target="_blank" alt="Breathing Animation" title="Breathing Animation" href="randomcode/breathing.html" coords="973,572,1064,567,1049,641,1105,709,988,718,997,652" shape="poly">
+      </map>
     </div>
+  </div>
 
-    <img src="Johanneschan.com-homepage.png" usemap="#image-map">
-    <map name="image-map">
-      <area target="_blank" alt="Word Picker" title="Word Picker" href="wordpicker/wordpicker.html" coords="706,760,952,938" shape="rect">
-      <area target="_blank" alt="NatureCam" title="NatureCam" href="NatureCam/home.html" coords="990,508,1293,521,1288,319,1161,154,1001,312" shape="poly">
-      <area target="_blank" alt="Root Machine" title="Root Machine" href="rootmachine/rootmachine.html" coords="457,752,372,892,589,913,677,768" shape="poly">
-      <area target="_blank" alt="Changing Shape" title="Changing Shape" href="randomcode/shapes.html" coords="1120,938,1072,999,1069,1059,1151,1064,1174,1045,1184,948" shape="poly">
-      <area target="_blank" alt="Breathing Animation" title="Breathing Animation" href="randomcode/breathing.html" coords="973,572,1064,567,1049,641,1105,709,988,718,997,652" shape="poly">
-    </map>
+
+  <div id="mobile" style="display: none;">
+    <div id="heading">
+      <img src="unmute.png" class="audio-control" id="audio-on" onclick="turnAudio('off');">
+      <img src="mute.png" class="audio-control" id="audio-off" onclick="turnAudio('on');" style="display: none;">
+      <audio id="audio">
+        <source src="cannon-in-d.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <h1 class="mobile-heading-text">Welcome to johanneschan.com!</h1>
+    </div> <!-- add onclick="document.getElementById('happyholidays').style.display = 'block';" when holiday comes -->
+
+    <div class="sectionheading">
+      <h2>Tools</h2>
+    </div>
+    <a href="wordpicker/wordpicker.html">Word Picker</a>
+    <a href="rootmachine/rootmachine.html">Root Machine</a>
+    <a href="NatureCam/home.html">NatureCam</a>
+
+    <div class="sectionheading">
+      <h2>Animations</h2>
+    </div>
+    <a href="randomcode/breathing.html">Breathing Animation</a>
+    <a href="randomcode/shapes.html">Changing shape</a>
+
+    <div class="sectionheading tableheading">
+      <h2>Happy Crew</h2>
+    </div>
+    <a href="https://docs.google.com/presentation/d/13SIZNlgdcG56uq0Da8i1SuKjOQFFJGyIzZdRuyfTmMI/edit?usp=sharing">Happy Crew slide</a>
+    <a href="https://docs.google.com/presentation/d/12qONZNfuIR88etm7Th05jjdImfDVnqwu495gnBCxTOY/edit?usp=sharing">Science Slide book</a>
+    <a href="https://docs.google.com/presentation/d/19VFccdYIMypvq-O2CVARsfuhgM46dmDSMAE4vLkOoS4/edit?usp=sharing">Shape Pictures</a>
+
+    <div class="sectionheading tableheading">
+      <h2>Other</h2>
+    </div>
+    <a href="https://sites.google.com/view/jchan-images">Images</a>
+
+    <div style="border: 5px #d4ecd6 solid;">
+      <div class="sectionheading" style="padding: 20px;">
+        <h2>Image Map</h2>
+        <div>In this image, there are hidden links. Can you find them? The links will take you to one of the things on johanneschan.com.</div>
+      </div>
+
+      <img src="Johanneschan.com-homepage.png" usemap="#image-map" width="500" height="600">
+      <map name="image-map">
+        <area target="_blank" alt="Word Picker" title="Word Picker" href="wordpicker/wordpicker.html" coords="706,760,952,938" shape="rect">
+        <area target="_blank" alt="NatureCam" title="NatureCam" href="NatureCam/home.html" coords="990,508,1293,521,1288,319,1161,154,1001,312" shape="poly">
+        <area target="_blank" alt="Root Machine" title="Root Machine" href="rootmachine/rootmachine.html" coords="457,752,372,892,589,913,677,768" shape="poly">
+        <area target="_blank" alt="Changing Shape" title="Changing Shape" href="randomcode/shapes.html" coords="1120,938,1072,999,1069,1059,1151,1064,1174,1045,1184,948" shape="poly">
+        <area target="_blank" alt="Breathing Animation" title="Breathing Animation" href="randomcode/breathing.html" coords="973,572,1064,567,1049,641,1105,709,988,718,997,652" shape="poly">
+      </map>
+    </div>
   </div>
 
   <!-- Global site tag (gtag.js) for Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
   <script>
     window.onload = function() {
+      if (detectMobile()) {
+        document.getElementById("desktop").style.display = "none";
+        document.getElementById("mobile").style.display = "block";
+      }
+
       var randnum = Math.floor(Math.random() * 4) + 1;
       var favicon = document.getElementById('favicon');
       console.log(randnum.toString());
@@ -225,6 +291,22 @@
       'page_title': 'wordpicker',
       'page_path': '/wordpicker/wordpicker.html'
     });
+
+    function detectMobile() {
+      const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+      ];
+
+      return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+      });
+    }
 
     function turnAudio(onoff) {
       var audio = document.getElementById("audio");
