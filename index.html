@@ -266,8 +266,6 @@
     </div>
   </div>
 
-  <!-- Global site tag (gtag.js) for Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
   <script>
     window.onload = function() {
       if (detectMobile()) {
@@ -280,17 +278,6 @@
       console.log(randnum.toString());
       favicon.href = "icon-" + randnum.toString() + ".ico";
     };
-
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID', {
-      'page_title': 'wordpicker',
-      'page_path': '/wordpicker/wordpicker.html'
-    });
 
     function detectMobile() {
       const toMatch = [
