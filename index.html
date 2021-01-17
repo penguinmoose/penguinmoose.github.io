@@ -144,8 +144,8 @@
 <body>
   <div id="desktop">
     <div id="heading">
-      <img src="unmute.png" class="audio-control" id="audio-on" onclick="turnAudio('off');">
-      <img src="mute.png" class="audio-control" id="audio-off" onclick="turnAudio('on');" style="display: none;">
+      <img src="unmute.png" class="audio-control" class="audio-on" onclick="turnAudio('off');">
+      <img src="mute.png" class="audio-control" class="audio-off" onclick="turnAudio('on');" style="display: none;">
       <audio id="audio">
         <source src="cannon-in-d.mp3" type="audio/mp3">
         Your browser does not support the audio element.
@@ -201,7 +201,7 @@
         <div>In this image, there are hidden links. Can you find them? The links will take you to one of the things on johanneschan.com.</div>
       </div>
 
-      <img src="Johanneschan.com-homepage.png" usemap="#image-map">
+      <img src="Johanneschan.com-homepage.jpg" usemap="#image-map">
       <map name="image-map">
         <area target="_blank" alt="Word Picker" title="Word Picker" href="wordpicker/wordpicker.html" coords="706,760,952,938" shape="rect">
         <area target="_blank" alt="NatureCam" title="NatureCam" href="NatureCam/home.html" coords="990,508,1293,521,1288,319,1161,154,1001,312" shape="poly">
@@ -215,8 +215,8 @@
 
   <div id="mobile" style="display: none;">
     <div id="heading">
-      <img src="unmute.png" class="audio-control" id="audio-on" onclick="turnAudio('off');">
-      <img src="mute.png" class="audio-control" id="audio-off" onclick="turnAudio('on');" style="display: none;">
+      <img src="unmute.png" class="audio-control" class="audio-on" onclick="turnAudio('off');">
+      <img src="mute.png" class="audio-control" class="audio-off" onclick="turnAudio('on');" style="display: none;">
       <audio id="audio">
         <source src="cannon-in-d.mp3" type="audio/mp3">
         Your browser does not support the audio element.
@@ -255,7 +255,7 @@
         <div>In this image, there are hidden links. Can you find them? The links will take you to one of the things on johanneschan.com.</div>
       </div>
 
-      <img src="Johanneschan.com-homepage.png" usemap="#image-map" width="500" height="600">
+      <img src="Johanneschan.com-homepage.jpg" usemap="#image-map" width="500" height="600">
       <map name="image-map">
         <area target="_blank" alt="Word Picker" title="Word Picker" href="wordpicker/wordpicker.html" coords="706,760,952,938" shape="rect">
         <area target="_blank" alt="NatureCam" title="NatureCam" href="NatureCam/home.html" coords="990,508,1293,521,1288,319,1161,154,1001,312" shape="poly">
@@ -313,12 +313,16 @@
 
       if (onoff == 'on') {
         audio.play();
-        document.getElementById("audio-on").style.display = "block";
-        document.getElementById("audio-off").style.display = "none";
+        document.getElementsByClassName("audio-on")[0].style.display = "block";
+        document.getElementsByClassName("audio-off")[0].style.display = "none";
+        document.getElementsByClassName("audio-on")[1].style.display = "block";
+        document.getElementsByClassName("audio-off")[1].style.display = "none";
       } else {
         audio.pause();
-        document.getElementById("audio-on").style.display = "none";
-        document.getElementById("audio-off").style.display = "block";
+        document.getElementsByClassName("audio-on")[0].style.display = "none";
+        document.getElementsByClassName("audio-off")[0].style.display = "block";
+        document.getElementsByClassName("audio-on")[1].style.display = "none";
+        document.getElementsByClassName("audio-off")[1].style.display = "block";
       }
     }
   </script>
