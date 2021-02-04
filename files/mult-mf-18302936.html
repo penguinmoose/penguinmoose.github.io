@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Multiplacation MathFacts</h1>
+
+  <button onclick="typeWriter()">View response</button>
+  <p id="text" style="font-size: 20px; font-family: monospace;"></p>
+
+  <script>
+    var i = 0;
+    var txt = '22, 10, 20, 6, 24, 4, 18, 8, 14, 16, 12, 8, 12, 4, 6, 14, 10, 24, 16, 18, 22, 20, 14, 10, 8, 22, 6, 18, 12, 16, 20, 24, 4, 24, 22, 10, 6, 16, 14, 4, 12, 20, 18, 8, 20, 4, 16, 14, 22, 8';
+    var speed = 20;
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("text").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+  </script>
+</body>
+
+</html>
