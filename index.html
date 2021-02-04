@@ -286,6 +286,14 @@
       }
     });
 
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      showInstallPromotion();
+    });
+
     function detectMobile() {
       const toMatch = [
         /Android/i,
