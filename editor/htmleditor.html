@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML editor</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    .topbar {
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+    }
+
+    .button {
+      background-color: #4cb150;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 10px;
+      float: left;
+      position: fixed;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 10px;
+      background-color: white;
+      color: black;
+      border: 2px solid #4cb150;
+      box-shadow: 0 8px 15px rgba(152, 152, 152, 0.7);
+    }
+
+    .button:hover {
+      background-color: #4CAF50;
+      color: white;
+      box-shadow: 0 8px 15px rgba(51, 215, 77, 0.7);
+    }
+
+
+    .main-editor {
+      background-color: #517ab5;
+      display: flex;
+      width: 100%;
+      margin-top: 70px;
+      padding: 1rem;
+      box-shadow: 0 2px 3px black;
+      position: fixed;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      border: 7px solid #36383f;
+    }
+
+    .first {
+      background-color: white;
+      width: 50%;
+      overflow-y: auto;
+      white-space: pre;
+      box-shadow: 0 1px 1px rgb(22, 22, 22);
+      outline: none;
+      padding: 0.4rem;
+      height: 90vh;
+      font-family: 'Menlo', 'Consolas', 'DejaVu Sans Mono', monospace;
+    }
+
+    .second {
+      background-color: rgb(255, 255, 255);
+      width: 50%;
+      overflow-y: auto;
+      white-space: pre;
+      right: 0;
+      box-shadow: 0 1px 1px rgb(22, 22, 22);
+      padding: 0.4rem;
+      height: 90vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <button class="run button">Run</button>
+  </div>
+  <div class="main-editor">
+    <div class="first" id="first" contenteditable>
+&lt;DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;div style="background-color: orange; padding: 10px;"&gt;Hello! Welcome to HTML Editor. Type code in the left side and press run to run it.&lt;/div&gt;
+&lt;/html&gt;
+    </div>
+    <iframe class="second">
+    </iframe>
+  </div>
+
+  <script src="editor.js"></script>
+</body>
+
+</html>
