@@ -61,6 +61,30 @@ var examples = {
       <p>This text is after the line.</p>
     </body>
   </html>
+  `,
+  "html-div": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <div style="background-color: blue;">
+        <p>This is a div for containing content. It can also contain text, too.
+      </div>
+    </body>
+  </html>
+  `,
+  "html-img": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <div>Use the img tag and add the src attribute to make a image. You do not need to end them.</div>
+      <img src="https://www.johanneschan.com/files/example-image.png">
+      <div>To control the width and the height of the image, add the width attribute and the height attribute. The dimentions are in pixels. The width and height can also be controled using CSS.</div>
+      <img src="https://www.johanneschan.com/files/example-image.png" width="155" height="96">
+      <div>The image above is smaller than the original image.</div>
+      <img src="https://www.johanneschan.com/files/example-image.png" width="466" height="291">
+      <div>The image above is larger than the original image.</div>
+    </body>
+  </html>
   `
 };
 
