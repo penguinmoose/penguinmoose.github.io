@@ -1,6 +1,6 @@
 const first = document.querySelector(".first");
 const iframe = document.querySelector("iframe");
-const btn =  document.getElementById("runbtn");
+const btn = document.getElementById("runbtn");
 
 const queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
@@ -101,6 +101,10 @@ if (examples[example] != undefined) {
   first.textContent = examples[example];
 }
 
+if (localStorage.getItem("code") != "") {
+  document.getElementById('first').textContent = localStorage.getItem("code");
+}
+
 btn.addEventListener("click", () => {
   run();
 });
@@ -111,6 +115,10 @@ first.addEventListener("paste", function(e) {
   var text = e.clipboardData.getData("text/plain");
   document.execCommand("insertText", false, text);
 });
+
+function save() {
+  localStorage.setItem('code', document.getElementById('first').textContent);
+}
 
 function run() {
   var html = first.textContent;
