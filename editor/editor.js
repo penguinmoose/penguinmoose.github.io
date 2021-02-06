@@ -85,7 +85,16 @@ var examples = {
       <div>The image above is larger than the original image.</div>
     </body>
   </html>
-  `
+  `,
+  "html-span": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <div>The span tag is a inline container for content or text. It is commanly used to make one section of text have some style.</div><br>
+      <div>Lorem ipsum some text. <span style="color: purple;">This text is purple. Lorem ipsum some text.</span> Some more text dolor sit amet.</div>
+    </body>
+  </html>
+  `,
 };
 
 if (examples[example] != undefined) {

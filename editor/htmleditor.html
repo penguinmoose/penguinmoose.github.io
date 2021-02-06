@@ -109,6 +109,7 @@
       display: block;
       transition: 0.3s;
       border: none;
+      overflow-y: scroll;
     }
 
     .examplesidebar a:hover {
@@ -138,7 +139,7 @@
     <div class="examplebtn" onclick="document.getElementsByClassName('examplesidebar')[0].style.width = '300px';">Examples</div>
   </div>
   <div class="main-editor">
-    <div class="first" id="first" contenteditable="true">
+    <div class="first" id="first" contenteditable="true" spellcheck="false">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;div style="background-color: orange; padding: 10px;"&gt;Hello! Welcome to HTML Editor. Type code in the left side and press run to run it.&lt;/div&gt;
@@ -158,6 +159,7 @@
     <a href="?example=html-br-hr">HTML linebreak and horizontal rule (hr and br)</a>
     <a href="?example=html-div">HTML div</a>
     <a href="?example=html-img">HTML image</a>
+    <a href="?example=html-span">HTML span tag</a>
   </div>
 
   <script src="editor.js"></script>
