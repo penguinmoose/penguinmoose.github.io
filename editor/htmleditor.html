@@ -85,22 +85,77 @@
       padding: 0.4rem;
       height: 90vh;
     }
+
+    .examplesidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      opacity: 0.9;
+    }
+
+    .examplesidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      background-color: transparent;
+      display: block;
+      transition: 0.3s;
+      border: none;
+    }
+
+    .examplesidebar a:hover {
+      color: #a1a1a1;
+    }
+
+    .examplebtn {
+      float: right;
+      margin-top: 100%;
+      margin: 10px;
+      padding: 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #85e67f;
+      width: 100px;
+    }
+
+    .examplebtn:hover {
+      background-color: #62e75a;
+    }
   </style>
 </head>
 
 <body>
   <div class="topbar">
-    <button class="run button">Run</button>
+    <button class="run button" id="runbtn">Run</button>
+    <div class="examplebtn" onclick="document.getElementsByClassName('examplesidebar')[0].style.width = '300px';">Examples</div>
   </div>
   <div class="main-editor">
-    <div class="first" id="first" contenteditable>
-&lt;DOCTYPE html&gt;
+    <div class="first" id="first" contenteditable="true">
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;div style="background-color: orange; padding: 10px;"&gt;Hello! Welcome to HTML Editor. Type code in the left side and press run to run it.&lt;/div&gt;
 &lt;/html&gt;
     </div>
     <iframe class="second">
     </iframe>
+  </div>
+
+  <div class="examplesidebar">
+    <a href="javascript:void(0)" onclick="document.getElementsByClassName('examplesidebar')[0].style.width = '0';" style="font-size: 50px;">&times</a>
+    <a href="htmleditor.html">Default code</a>
+    <a href="?example=html-helloworld">HTML helloworld</a>
+    <a href="?example=html-headings">HTML headings</a>
+    <a href="?example=html-paragraph">HTML paragraph</a>
+    <a href="?example=html-b-i-em-tags">HTML bold, italic and emphasize tags</a>
+    <a href="?example=html-br-hr">HTML linebreak and horizontal rule (hr and br)</a>
   </div>
 
   <script src="editor.js"></script>

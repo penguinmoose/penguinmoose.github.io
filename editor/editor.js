@@ -1,10 +1,75 @@
 const first = document.querySelector(".first");
 const iframe = document.querySelector("iframe");
-const btn = document.querySelector("button");
+const btn =  document.getElementById("runbtn");
+
+const queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+var example = urlParams.get('example');
+
+var examples = {
+  "html-helloworld": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <h1>HTML helloworld</h1>
+      <p>This is a paragraph</p>
+    </body>
+  </html>
+  `,
+  "html-headings": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <h1>This is a level-1 heading</h1>
+      <h2>This is a level-2 heading</h2>
+      <h3>This is a level-3 heading</h3>
+      <h4>This is a level-4 heading</h4>
+      <h5>This is a level-5 heading</h5>
+      <h6>This is a level-6 heading</h5>
+      <p>This is just a normal paragraph.</p>
+    </body>
+  </html>
+  `,
+  "html-paragraph": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <p>This is a paragraph for text.</p>
+    </body>
+  </html>
+  `,
+  "html-b-i-em-tags": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <p>This is a normal paragraph. The following text will be bold, italic, or emphasized.</p>
+      <b>Visit johanneschan.com!</b><br>
+      <i>Visit johanneschan.com! It provides completly free tools.</i><br>
+      <em>Visit johanneschan.com! It provides completly free tools and animations.</em><br>
+      <p>You can put these tags inside each other.</p>
+      <b>Visit johanneschan.com! <i>It provides completly free tools <em>and animations.</em></i></b>
+    </body>
+  </html>
+  `,
+  "html-br-hr": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <p>You can insert line<br>breaks using the br tag.</p>
+      <p>You can also insert a line using the hr tag.</p>
+      <hr>
+      <p>This text is after the line.</p>
+    </body>
+  </html>
+  `
+};
+
+if (examples[example] != undefined) {
+  first.textContent = examples[example];
+}
 
 btn.addEventListener("click", () => {
-  var html = first.textContent;
-  iframe.src = "data:text/html;charset=utf-8," + encodeURI(html);
+  run();
 });
 
 first.addEventListener("paste", function(e) {
@@ -13,6 +78,12 @@ first.addEventListener("paste", function(e) {
   var text = e.clipboardData.getData("text/plain");
   document.execCommand("insertText", false, text);
 });
+
+function run() {
+  var html = first.textContent;
+  iframe.src = "data:text/html;charset=utf-8," + encodeURI(html);
+}
+run();
 
 
 
