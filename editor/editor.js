@@ -206,6 +206,38 @@ var examples = {
       </script>
     </body>
   </html>
+  `,
+  "html-style-attribute": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <div style="background-color: green;">The background of this text is made green using the style attribute.</div>
+      <div>If the style has more than 4 or 5 properties, it is recomended that you define the style in the style section.</div>
+    </body>
+  </html>
+  `,
+  "html-title-attribute": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <div style="background-color: orange;" title="The title">Hover over me for some time to see the title. The title is like a tooltip.</div>
+    </body>
+  </html>
+  `,
+  "html-href-attribute-a": `
+  <!DOCTYPE html>
+  <html>
+    <a href="https://www.johanneschan.com">Use the href attribute in a hyperlink to control what a link links to.</a>
+  </html>
+  `,
+  "html-alt-attribute-img": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <div>Use the alt attribute in the image tag to provide content about the image when the image does not exist. If the user is using a screen reader, it will read the alt text.<br>Example:</div><br>
+      <img src="doesnotexist.png" alt="Some alt text">
+    </body>
+  </html>
   `
 };
 
