@@ -95,14 +95,122 @@ var examples = {
     </body>
   </html>
   `,
+  "html-small": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <div>This is normal text.</div>
+      <small>This text is small.</small>
+    </body>
+  </html>
+  `,
+  "html-hyperlink": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <a href="https://www.johanneschan.com">This is a link to johanneschan.com. Change the href attribute to change where it links to.</a>
+    </body>
+  </html>
+  `,
+  "html-button": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <button>This is a button. Add the onclick attribute to control what javascript to run when it is clicked.</button>
+    </body>
+  </html>
+  `,
+  "html-css": `
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        body {
+          font-family: cursive;
+        }
+
+        .text {
+          color: green;
+        }
+      </style>
+    </head>
+
+    <body>
+      <div>Some text is made cursive using CSS.</div>
+      <div class="text">This div with the class 'text' is made green by CSS.</div>
+    </body>
+  </html>
+  `,
+  "html-script": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <button onclick="myFunction()">Click to show text</button><br>
+      <div id="text" style="display: none;">Some text!</div>
+
+      <script>
+        function myFunction() {
+          document.getElementById("text").style.display = "block";
+        }
+      </script>
+    </body>
+  </html>
+  `,
+
+  "html-onclick-attribute": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <div style="padding: 20px; background-color: green;" onclick="alert('An alert is shown!')">Click me to show an alert</div>
+    </body>
+  </html>
+  `,
+  "html-class-attribute": `
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        .text {
+          color: green;
+          padding: 10px;
+          background-color: orange;
+        }
+      </style>
+    </head>
+
+    <body>
+      <div id="normatext">This is normal text</div>
+      <div class="text">This is text styled by CSS and will be hidden when you press the button below because of its class.</div><br>
+      <button onclick="hideText()" id="button">Hide the text above</button>
+
+      <script>
+        function hideText() {
+          document.getElementsByClassName("text")[0].style.display = "none";
+          document.getElementById("button").style.display = "none";
+          document.getElementById("normatext").innerHTML = "The text was hidden. Press run to reset it."
+        }
+      </script>
+    </body>
+  </html>
+  `,
+  "html-id-attribute": `
+  <!DOCTYPE html>
+  <html>
+    <body>
+      <div id="text" onclick="myFunction()">Click me to change my content because of my id.</div>
+
+      <script>
+        function myFunction() {
+          document.getElementById("text").innerHTML = "The content was changed!";
+        }
+      </script>
+    </body>
+  </html>
+  `
 };
 
 if (examples[example] != undefined) {
   first.textContent = examples[example];
-}
-
-if (localStorage.getItem("code") != "") {
-  document.getElementById('first').textContent = localStorage.getItem("code");
 }
 
 btn.addEventListener("click", () => {
@@ -115,10 +223,6 @@ first.addEventListener("paste", function(e) {
   var text = e.clipboardData.getData("text/plain");
   document.execCommand("insertText", false, text);
 });
-
-function save() {
-  localStorage.setItem('code', document.getElementById('first').textContent);
-}
 
 function run() {
   var html = first.textContent;
@@ -224,7 +328,7 @@ function codeColor(elmnt, mode) { // the colors are edited
     }
     rest = done + rest;
     for (i = 0; i < comment.arr.length; i++) {
-      rest = rest.replace("W3HTMLCOMMENTPOS", comment.arr[i]);
+      rest = rest.replace("", comment.arr[i]);
     }
     return rest;
   }
