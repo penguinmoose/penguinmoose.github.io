@@ -5,3 +5,4 @@ https://www.johanneschan.com/NatureCam/home.html
 https://www.johanneschan.com/randomcode/breathing.html
 https://www.johanneschan.com/randomcode/shapes.html
 https://www.johanneschan.com/randomcode/moving-square.html
+https://www.johanneschan.com/editor/htmleditor.html
