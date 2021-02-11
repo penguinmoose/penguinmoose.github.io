@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Johanneschan Files</title>
+
+  <style>
+    body {
+      background-color: #5bb979;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 30px;
+      font-weight: 200;
+    }
+
+    .uuid-input {
+      width: calc(100% - 200px);
+      height: 50px;
+      margin-left: 100px;
+      margin-right: 100px;
+      margin-top: 20px;
+      background-color: #42d170;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #golink {
+      margin-left: 50%;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 10px;
+      background-color: #697bdd;
+      border-radius: 5px;
+      color: white;
+    }
+
+    #golink:hover {
+      background-color: #435bdd;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Johanneschan Files<br>Type in the the UUID of the file below and press 'go to file'.</h1>
+  <input type="text" name="fileuuid" placeholder="Type UUID here..." class="uuid-input" onkeyup="updateLink();">
+  <a href="" id="golink">Go to file</a>
+
+  <script>
+    function updateLink() {
+      document.getElementById("golink").href = document.getElementsByClassName("uuid-input")[0].value + ".html";
+    }
+  </script>
+</body>
+
+</html>
