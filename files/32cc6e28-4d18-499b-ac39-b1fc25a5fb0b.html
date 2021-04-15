@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Happy Birthday</title>
+
+  <style>
+    body {
+      background-color: #222;
+      font-family: sans-serif;
+      color: white;
+      padding: 20px;
+    }
+
+    .cube-text-change {
+      background-color: #e6e6e6;
+      width: 150px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 2px solid #888;
+      transition-duration: 0.5s;
+      outline: none;
+      margin-bottom: 10px;
+    }
+
+    .cube-text-change:focus {
+      background-color: #84a1db;
+      border-color: #2a63c4;
+    }
+
+    @keyframes turn {
+      from {
+        transform: rotate3d(0, 0, 0, 0);
+      }
+
+      to {
+        transform: rotate3d(1, 1, 0, 360deg);
+      }
+    }
+
+    @keyframes colorchange {
+      0% {
+        background-color: #182b62;
+        color: white;
+      }
+
+      50% {
+        background-color: #59dba1;
+        color: black;
+      }
+
+      100% {
+        background-color: #182b62;
+        color: white;
+      }
+    }
+
+    .container {
+      width: 200px;
+      height: 200px;
+      perspective: 500px;
+      margin: 100px;
+    }
+
+    .cube {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      transform-style: preserve-3d;
+      animation: turn 6s linear infinite;
+    }
+
+    .face {
+      width: 200px;
+      height: 200px;
+      background: #182b62;
+      color: white;
+      border: 2px solid white;
+      position: absolute;
+      opacity: 0.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Menlo', sans-serif;
+      font-size: 2rem;
+      transition: transform 500ms;
+      animation: colorchange 3s infinite;
+      user-select: none;
+    }
+
+    .front {
+      transform: translateZ(100px);
+    }
+
+    .back {
+      transform: translateZ(-100px) rotateY(180deg);
+      animation-delay: 0.2s;
+    }
+
+    .left {
+      transform: translateX(-100px) rotateY(-90deg);
+      animation-delay: 0.4s;
+    }
+
+    .right {
+      transform: translateX(100px) rotateY(90deg);
+      animation-delay: 0.6s;
+    }
+
+    .top {
+      transform: translateY(-100px) rotateX(90deg);
+      animation-delay: 0.8s;
+    }
+
+    .bottom {
+      transform: translateY(100px) rotateX(-90deg);
+      animation-delay: 1s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cube {
+        animation: none;
+        transform: rotate3d(1, 1, 0, 45deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Happy Birthday Henry!</h1>
+  <div>I hope you have a great birthday! I made this to say happy birthday to you.</div>
+  <br>
+  <div>The cube below should spin. Please use Chrome (at least not Safari) because some browsers including Safari do not support what the cube uses to spin. To make it go faster, press the cube. Press it again to make the speed back to normal. If you would like to change the text of the cube, change it in the change text section.</div>
+  <br><br>
+
+  <div class="container">
+    <div class="cube" onclick="changeSpeed();">
+      <div class="face top">Happy</div>
+      <div class="face bottom">Birthday</div>
+      <div class="face left">Henry</div>
+      <div class="face right">Happy</div>
+      <div class="face front">Birthday</div>
+      <div class="face back">Henry</div>
+    </div>
+  </div>
+
+  <br><br>
+  <fieldset style="width: 350px; border: 2px solid #aaa; border-radius: 10px; padding-left: 25px; padding-top: 10px;" onkeyup="changeText();">
+    <legend style="background-color: #3b49a7; padding: 4px; border-radius: 5px;">Cube text:</legend>
+
+    <label for="face-top-edit">Top face:</label>
+    <input type="text" name="face-top-edit" value="Happy" class="cube-text-change" maxlength="15" id="topface-text">
+    <br>
+
+    <label for="face-bottom-edit">Bottom face:</label>
+    <input type="text" name="face-bottom-edit" value="Birthday" class="cube-text-change" maxlength="15" id="bottomface-text">
+    <br>
+
+    <label for="face-right-edit">Right face:</label>
+    <input type="text" name="face-right-edit" value="Henry" class="cube-text-change" maxlength="15" id="rightface-text">
+    <br>
+
+    <label for="face-left-edit">Left face:</label>
+    <input type="text" name="face-left-edit" value="Happy" class="cube-text-change" maxlength="15" id="leftface-text">
+    <br>
+
+    <label for="face-front-edit">Front face:</label>
+    <input type="text" name="face-front-edit" value="Birthday" class="cube-text-change" maxlength="15" id="frontface-text">
+    <br>
+
+    <label for="face-back-edit">Back face:</label>
+    <input type="text" name="face-back-edit" value="Henry" class="cube-text-change" maxlength="15" id="backface-text">
+  </fieldset>
+
+  <script type="text/javascript">
+    var speed = 6;
+
+    function changeSpeed() {
+      if (speed == 6) {
+        document.getElementsByClassName("cube")[0].style.animation = "turn 3s linear infinite";
+        speed = 4;
+      } else {
+        document.getElementsByClassName("cube")[0].style.animation = "turn 6s linear infinite";
+        speed = 6;
+      }
+    }
+
+    function changeText() {
+      var faces = document.getElementsByClassName("face");
+
+      faces[0].innerHTML = document.getElementById("topface-text").value;
+      faces[1].innerHTML = document.getElementById("bottomface-text").value;
+      faces[2].innerHTML = document.getElementById("leftface-text").value;
+      faces[3].innerHTML = document.getElementById("rightface-text").value;
+      faces[4].innerHTML = document.getElementById("topface-text").value;
+      faces[5].innerHTML = document.getElementById("bottomface-text").value;
+    }
+  </script>
+</body>
+
+</html>
