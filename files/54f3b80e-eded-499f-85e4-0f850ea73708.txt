@@ -1,0 +1,90 @@
+when green flag clicked
+set up character list // defined later on
+
+define set up character list
+set [characters v] to [abcdefghijklmnopqrstuvwxyz0123456789:,_-] // include more characters if you want passwords to be able to contain more characters (must contain ':' and ',')
+set [i1 v] to [1]
+delete all of [character list v]::list
+repeat (length of (characters))
+add (letter (i1) of (characters)) to [character list v]
+change [i1 v] by [1]
+end
+
+define new user
+...// This custom block will ask the user for a password for a new user.
+ask [Please enter your password:] and wait
+get game data (answer) // defined later on
+if <not <(get game data result) = []>> then
+repeat until <(get game data result) = []>
+ask [Password already taken. Please enter another password:] and wait
+get game data (answer)
+end
+end
+register new password (answer) with [abc] // defined later on
+
+define register new password (password) with (default data)
+add (join (password) (join [:] (join (default data) [,]))) to [data v] // construct data structure for that item
+encode (data::list) into a number // defined later on
+set [☁ gamedata v] to (join(☁ gamedata) (encoded number)) // simply add that user's data to the raw cloud database
+
+define encode (data) into a number
+set [i2 v] to (1)
+repeat(length of(data))
+if <(item # of (letter (i2) of (data)) in [character list v]::list) < (10)> then
+set [encoded v] to (join (encoded) (join [0] (item # of (letter (i2) of (data)) in [character list v]::list)))
+else
+set [encoded v] to (join (encoded)(item # of (letter (i2) of (data)) in [character list v]::list))
+end
+change [i2 v] by (1)
+end
+
+define decode (data) into string
+set [i3 v] to [1]
+repeat ((length of (data))/[2])
+set [decoded v] to (join(decoded)(item # of (join (letter (i3) of (data))(letter ((i3) + (1)) of (data))) in [character list v]::list)
+change [i3 v] by [2]
+
+define get game data (password)
+find data item of (password) // we first need to know where to look for the data
+decode (☁ gamedata) into string
+split (decoded) on [,] // split by each user (defined later on)
+split (item (data item of password) of [split result v] :: list) on [:] // split into password-data pair
+set [get game data result v] to (item (2) of [split result v] :: list) // the data is the second item in the result
+
+define split (string) on (character)
+set [current v] to []
+set [iteration v] to [1]
+delete all of [split result v]::list // the resulting password-data pair
+repeat (length of (string))
+if <(letter (iteration) of (string)) = (character)> then
+add (current) to [split result v]
+set [current v] to []
+else
+set [current v] to (join (current) (letter (iteration) of (string)))
+end
+change [iteration v] by [1]
+end
+add (current) to [split result v]
+
+define write new game data (new game data) to password (password)
+find data item of (password) // defined later on
+replace item (data item of password) of [data v] with (new game data)
+encode (data::list) into a number
+set [☁ gamedata v] to (encoded number)
+
+define find data item of (password)
+split (data :: list) on [,] // split data by users
+split (item (1) of [split result v] :: list) on [:] // split first user item into password-data pair
+set [i4 v] to [1]
+repeat until <(item (1) of [split result v] :: list) = (password)> // keep trying different pairs to find data item
+split (item (i4) of [split result v] :: list) on [:]
+change [i4 v] by [1]
+end
+set [data item of password v] to (i4) // the result (data item) is how many times it had to try in order to get it right
+
+
+write new game data [new game data] to password [user's password] // use this custom block to write new game data to a user's password.
+
+get game data (join ( ) [password]) // use this custom block to get the user's data from a given password. The space is important in the join block.
+
+new user // use this custom block to ask the user to enter a password for creating a new password to save their data.
