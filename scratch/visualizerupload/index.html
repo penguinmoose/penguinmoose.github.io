@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title id="title">Music upload</title>
+
+  <style>
+    body {
+      background-color: #4b4b4b;
+      font-family: sans-serif;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    Hello!
+
+    To upload your song for the music visulizer Scratch project, select the audio file by clicking on the button below:
+    <div style="height: 10px;"></div>
+    <input type="file" id="thefile" accept="audio/*">
+    <audio id="audio"></audio>
+    <div style="height: 20px;"></div>
+    Your song will play. Do not disturb this process because it will be reading the audio file. When it is done reading the file, the generated code will in the textbox below:
+    <div style="height: 16px;"></div>
+    <textarea id="result" rows="10" cols="75" style="font-size: 10px;">You have not selected a file.</textarea>
+    <div style="height: 16px;"></div>
+    Once a code appears, select the textbox (do not change anything) and press cmd + A or ctrl + A to select all. If you are on a mobile device, double-tap the textbox to select all (make sure it is selected). Then, copy the selected code and paste it in the project.
+  </p>
+
+  <script>
+    window.onload = function() {
+      var file = document.getElementById("thefile");
+      var audio = document.getElementById("audio");
+      var data = [];
+      var thisframedata = [];
+      var chars = '`1234567890-=qwertyuiop[]\\asdfghjkl;\'zxcvbnm,.\/~_+{}|:\"<>?\u00A1\u2122\u00A3\u00A2\u221E\u00A7\u00B6\u2022\u00AA\u00BA\u2013\u2260\u0153\u2211\u00B4\u00AE\u2020\u00A5\u00A8\u02C6\u00F8\u03C0\u00E5\u00DF\u2202\u0192\u00A9\u02D9\u2206\u02DA\u00AC\u2026\u00E6\u03A9\u2248\u00E7\u221A\u222B\u02DC\u00B5\u2264\u2265\u00F7\u2044\u20AC\u2039\u203A\uFB01\uFB02\u2021\u00B0\u00B7\u201A\u2014\u00B1\u0152\u201E\u00B4\u2030\u02C7\u00C1\u00A8\u02C6\u00D8\u220F\u201D\u2019\u00BB\u00C5\u00CD\u00CE\u00CF\u02DD\u00D3\u00D4\uF8FF\u00D2\u00DA\u00C6\u00B8\u02DB\u00C7\u25CA\u0131\u02DC\u00C2\u00AF\u02D8\u00BF\u24D0\u24D1\u24D2\u24D3\u24D4\u24D5\u24D6\u24D7\u24D8\u24D9\u24DA\u24DB\u24DC\u24DD\u24DE\u24DF\u24E0\u24E1\u24E2\u24E3\u24E4\u24E5\u24E6\u24E7\u24E8\u24E9\u15E9\u15F7\u1455\u15EA\u15B4\u157C\u148D\u14AA\u15F0\u144E\u146D\u146B\u1587\u1515\u144C\u142F\u15EF\u166D\u1614z\u028Ex\u028D\u028Cn\u0287s\u0279bdou\u026Fl\u029E\u027E\u0131\u0265\u0253\u025F\u01DDp\u0254q\u0250 \u2580 \u2581 \u2582 \u2583 \u2584\u2585\u2586\u2587\u2588\u2589\u258A\u258B\u258C\u258D\u258E\u258F\u2590\u2591\u2592\u2593\u2594\u2595\u2596\u2597\t\u2598\u2599\u259A\u259B\u259C\u259D\u259E\u259F';
+
+      file.onchange = function() {
+        var files = this.files;
+        audio.src = URL.createObjectURL(files[0]);
+        audio.load();
+        document.getElementById('result').innerHTML = "Reading file - please wait...";
+        audio.play();
+        var context = new AudioContext();
+        var src = context.createMediaElementSource(audio);
+        var analyser = context.createAnalyser();
+
+        src.connect(analyser);
+        analyser.connect(context.destination);
+
+        analyser.fftSize = 64;
+
+        var bufferLength = analyser.frequencyBinCount;
+        console.log(bufferLength);
+
+        var dataArray = new Uint8Array(bufferLength);
+
+        function frame() {
+          requestAnimationFrame(frame);
+          analyser.getByteFrequencyData(dataArray);
+
+          thisframedata = [];
+
+          for (var i = 0; i < bufferLength; i++) {
+            barHeight = dataArray[i];
+            thisframedata.push(chars.charAt(barHeight));
+          }
+        }
+
+        audio.play();
+        frame();
+        setInterval(addData, 50);
+      };
+
+      audio.onended = function() {
+        result.innerHTML = data.join('');
+      };
+
+      function addData() {
+        data.push(thisframedata.join(''));
+      }
+    };
+  </script>
+</body>
+
+</html>
