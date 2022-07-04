@@ -27,7 +27,7 @@ def weather(city):
         info = soup.select('#wob_dc')[0].getText().strip()
         temp = soup.select('#wob_tm')[0].getText().strip()
 
-        print('Weather: temp: ' + str(temp) + '°F description: ' + info)
+        print('Weather: temp: ' + str(temp) + '�F description: ' + info)
 
         try:
             variables.set_cloud_variable(variable_name='response: thislocation', value=encode(city))
@@ -46,6 +46,8 @@ def weather(city):
             variables = project.connect_cloud_variables()
             variables.set_cloud_variable(variable_name='response: thislocation', value=encode(city))
             variables.set_cloud_variable(variable_name='response: infotext', value=encode('no report available'))
+    
+    variables.set_cloud_variable(variable_name='request', value='')
 
 
 ALL_CHARS = "abcdefghijklmnopqrstuvwxyz0123456789.,'- "
@@ -73,6 +75,12 @@ def encode(text):
 
 while True: # Check every second
     sleep(1 - time() % 1)
-    decoded = decode(variables.get_cloud_variable_value(variable_name='request', limit=100)[0])
-    if decoded != '':
-        weather(decoded)
+    try:
+        value = variables.get_cloud_variable_value(variable_name='request', limit=200)[0]
+        #print(value)
+        decoded = decode(value)
+        if decoded != '':
+            weather(decoded)
+    except ValueError as e:
+        print('JSONDecodeError - ignoring')
+
