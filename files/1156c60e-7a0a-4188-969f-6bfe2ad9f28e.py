@@ -1,4 +1,5 @@
-# IMPORTANT! This code was created by @penguinmoose on Github or @helloworldbyeworld on Scratch. You MUST use this code only with official permission from @helloworldbyeworld on Scratch.
+# IMPORTANT! This code was created by @penguinmoose on Github or @helloworldbyeworld on Scratch. You MUST use this code only
+# with official permission from @helloworldbyeworld on Scratch.
 
 # Usuage without complete permission and credit to @helloworldbyeworld on Scratch will be reported.
 
