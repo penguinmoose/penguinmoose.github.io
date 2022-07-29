@@ -1,3 +1,15 @@
+# IMPORTANT! This code was created by @penguinmoose on Github or @helloworldbyeworld on Scratch. You MUST use this code only with official permission from @helloworldbyeworld on Scratch.
+
+# Usuage without complete permission and credit to @helloworldbyeworld on Scratch will be reported.
+
+# On your project, you must display clearly the following text:
+# This project, including its backend code, is made 100% by @helloworldbyeworld. All code credit goes to @helloworldbyeworld.
+
+# Comment "I have understood the terms 1156 c60e" on @helloworldbyeworld's profile if you have read and understood these terms. 
+
+
+
+
 import scratchconnect
 from bs4 import BeautifulSoup
 import requests
