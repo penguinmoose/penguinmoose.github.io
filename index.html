@@ -2,15 +2,7 @@
 <html>
 
 <head>
-  <title>Johanneschan.com</title>
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KD3PDG6');</script>
-  <!-- End Google Tag Manager -->
+  <title>Penguinmoose.github.io</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -183,29 +175,6 @@
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KD3PDG6"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <div class="gcse-search"></div>
-
-  <div id="desktop">
-    <div id="heading">
-      <img src="unmute.png" class="audio-control" class="audio-on" onclick="turnAudio('off');">
-      <img src="mute.png" class="audio-control" class="audio-off" onclick="turnAudio('on');" style="display: none;">
-      <audio id="audio">
-        <source src="cannon-in-d.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-      </audio>
-      <h1 class="heading-text">Welcome to Penguinmoose!</h1>
-    </div> <!-- add onclick="document.getElementById('happyholidays').style.display = 'block';" when holiday comes -->
-
-    <div class="happyholidays-popup" id="happyholidays" onclick="document.getElementById('happyholidays').style.display = 'none';">
-      <button style="background-color: white; border: none;">&times</button><br>
-      <img src="happy-holidays.jpg" style="height: 165px; width: 325px;">
-    </div>
-
     <div class="table-container">
       <div class="container">
         <div class="row">
@@ -225,8 +194,6 @@
             </div>
             <a href="randomcode/breathing.html">Breathing Animation</a>
             <a href="randomcode/shapes.html">Changing shape</a>
-            <a href="https://www.sites.google.com/view/jchan-images">Images<br>
-              <small>Not an animation</small>
             </a>
           </div>
 
@@ -242,36 +209,10 @@
       </div>
     </div>
     <br>
-
-
-    <div style="border: 5px #d4ecd6 solid; border-radius: 10px; margin-left: 8%; margin-right: 8%; margin-top: 10px;">
-      <div class="sectionheading" style="padding: 20px;">
-        <h2>Image Map</h2>
-        <div>In this image, there are hidden links. Can you find them? The links will take you to one of the things on johanneschan.com.</div>
-      </div>
-
-      <img src="Johanneschan.com-homepage.jpg" usemap="#image-map">
-      <map name="image-map">
-        <area alt="Word Picker" title="Word Picker" href="wordpicker/wordpicker.html" coords="706,760,952,938" shape="rect">
-        <area alt="NatureCam" title="NatureCam" href="NatureCam/home.html" coords="990,508,1293,521,1288,319,1161,154,1001,312" shape="poly">
-        <area alt="Root Machine" title="Root Machine" href="rootmachine/rootmachine.html" coords="457,752,372,892,589,913,677,768" shape="poly">
-        <area alt="Changing Shape" title="Changing Shape" href="randomcode/shapes.html" coords="1120,938,1072,999,1069,1059,1151,1064,1174,1045,1184,948" shape="poly">
-        <area alt="Breathing Animation" title="Breathing Animation" href="randomcode/breathing.html" coords="973,572,1064,567,1049,641,1105,709,988,718,997,652" shape="poly">
-      </map>
-    </div>
   </div>
 
 
   <div id="mobile" style="display: none;">
-    <div id="heading">
-      <img src="unmute.png" class="audio-control" class="audio-on" onclick="turnAudio('off');">
-      <img src="mute.png" class="audio-control" class="audio-off" onclick="turnAudio('on');" style="display: none;">
-      <audio id="audio">
-        <source src="cannon-in-d.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-      </audio>
-      <h1 class="mobile-heading-text">Welcome to johanneschan.com!</h1>
-    </div> <!-- add onclick="document.getElementById('happyholidays').style.display = 'block';" when holiday comes -->
 
     <div class="sectionheading">
       <h2>Tools</h2>
@@ -342,18 +283,6 @@
       showInstallPromotion();
     });
 
-    document.getElementById("installbtn").addEventListener('click', (e) => {
-      // Show the install prompt
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the install prompt');
-        } else {
-          console.log('User dismissed the install prompt');
-        }
-      });
-    });
-
     function detectMobile() {
       const toMatch = [
         /Android/i,
@@ -368,24 +297,6 @@
       return toMatch.some((toMatchItem) => {
         return navigator.userAgent.match(toMatchItem);
       });
-    }
-
-    function turnAudio(onoff) {
-      var audio = document.getElementById("audio");
-
-      if (onoff == 'on') {
-        audio.play();
-        document.getElementsByClassName("audio-on")[0].style.display = "block";
-        document.getElementsByClassName("audio-off")[0].style.display = "none";
-        document.getElementsByClassName("audio-on")[1].style.display = "block";
-        document.getElementsByClassName("audio-off")[1].style.display = "none";
-      } else {
-        audio.pause();
-        document.getElementsByClassName("audio-on")[0].style.display = "none";
-        document.getElementsByClassName("audio-off")[0].style.display = "block";
-        document.getElementsByClassName("audio-on")[1].style.display = "none";
-        document.getElementsByClassName("audio-off")[1].style.display = "block";
-      }
     }
   </script>
 </body>
