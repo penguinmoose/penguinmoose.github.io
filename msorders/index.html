@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your order progress</title>
+</head>
+<body>
+    <h1 id="heading">Sorry, cannot retreive your order.</h1>
+    <div>You ordered: <span id="ordername">---</span></div>
+    <label for="progressbar">Order progress: <span id="progresstext">---</span></label>
+    <progress id="progressbar" value="0" max="9"></progress>
+
+    <script>
+        var urlparams = new URLSearchParams(window.location.search);
+        const id = urlparams.get('id');
+
+        var orderdata = {
+            '75d4507f925c03da': {
+                'name': 'Erica',
+                'product': 'Active small upright speaker',
+                'progress': 'Has not started',
+                'progressnumber': 0
+            }
+        }
+
+        document.getElementById('heading').innerText = "Hello " + orderdata[id].name;
+        document.getElementById('ordername').innerText = orderdata[id].product;
+        document.getElementById('progresstext').innerText = orderdata[id].progress;
+        document.getElementById('progressbar').value = orderdata[id].progressnumber;
+    </script>
+</body>
+</html>
