@@ -199,11 +199,11 @@
 
           <div class="col-sm-4">
             <div class="sectionheading tableheading">
-              <h2>Happy Crew</h2>
+              <h2>Links and contacts</h2>
             </div>
-            <a href="https://docs.google.com/presentation/d/13SIZNlgdcG56uq0Da8i1SuKjOQFFJGyIzZdRuyfTmMI/edit?usp=sharing">Happy Crew slide</a>
-            <a href="https://docs.google.com/presentation/d/12qONZNfuIR88etm7Th05jjdImfDVnqwu495gnBCxTOY/edit?usp=sharing">Science Slide book</a>
-            <a href="https://docs.google.com/presentation/d/19VFccdYIMypvq-O2CVARsfuhgM46dmDSMAE4vLkOoS4/edit?usp=sharing">Shape Pictures</a>
+              <a href="scratch.mit.edu/users/helloworldbyeworld">Scratch profile</a>
+              <a href="github.com/penguinmoose">GitHub profile</a>
+              <a href="https://scratch.mit.edu/projects/667393756/">Scratch weather project!</a>
           </div>
         </div>
       </div>
@@ -253,13 +253,6 @@
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("service-worker.js");
       }
-    });
-
-    let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      showInstallPromotion();
     });
 
     function detectMobile() {
